@@ -1,7 +1,8 @@
 "use strict";
 
 const express = require("express");
-const routeMovies = require("./routes/routeMovies")
+const routeMovies = require("./routes/routeMovies");
+const routeComments = require("./routes/routeComments");
 const bodyParser = require("body-parser");
 
 var app = express();
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 routeMovies.routeMovies(app);
+routeComments.routeComments(app);
 
 function gotoIndex(req, res) {
     console.log(req.params);
